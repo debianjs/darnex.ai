@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darnex AI - Inteligencia Artificial Avanzada</title>
+    <meta name="description" content="Darnex AI - Tu asistente de inteligencia artificial disponible en WhatsApp. Conversaciones inteligentes, respuestas precisas, disponible 24/7.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 24px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .company-type {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 15px;
+        }
+
+        .nav-link:hover {
+            color: #1a1a1a;
+        }
+
+        .hero-section {
+            padding: 80px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #fafafa, #f0f0f0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 48px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-cta:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .features-section {
+            padding: 80px 40px;
+            background: #ffffff;
+        }
+
+        .section-content {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 64px;
+        }
+
+        .feature-card {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-color: #ddd;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .about-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin: 64px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1a1a1a;
+            display: block;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .contact-section {
+            padding: 80px 40px;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .contact-subtitle {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #25D366;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+        }
+
+        .contact-method-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-method-info {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .contact-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        .footer {
+            background: #111;
+            color: #666;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #999;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Elementos decorativos */
+        .hero-bg-element {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.03), rgba(26, 26, 26, 0.01));
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px 24px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            
+            .hero-section {
+                padding: 60px 24px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .features-section,
+            .about-section,
+            .contact-section {
+                padding: 60px 24px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .feature-card {
+                padding: 32px 24px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content,
+        .feature-card,
+        .stat-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        /* Modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            
+            .container {
+                background: #1a1a1a;
+            }
+            
+            .header {
+                background: rgba(26, 26, 26, 0.95);
+                border-bottom-color: #333;
+            }
+            
+            .hero-section,
+            .about-section {
+                background: #1a1a1a;
+            }
+            
+            .features-section {
+                background: #111;
+            }
+            
+            .feature-card {
+                background: #222;
+                border-color: #333;
+            }
+            
+            .company-name,
+            .hero-title,
+            .section-title,
+            .feature-title {
+                color: #ffffff;
+            }
+            
+            .nav-link {
+                color: #ccc;
+            }
+            
+            .nav-link:hover {
+                color: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">D</div>
+                    <div>
+                        <div class="company-name">Darnex AI</div>
+                        <div class="company-type">Inteligencia Artificial</div>
+                    </div>
+                </div>
+                <nav class="nav-links">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#caracteristicas" class="nav-link">Características</a>
+                    <a href="#acerca" class="nav-link">Acerca de</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-bg-element"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Tu Asistente de IA Personal</h1>
+                <p class="hero-subtitle">
+                    Darnex AI es una inteligencia artificial avanzada que te ayuda con respuestas inteligentes, 
+                    conversaciones naturales y asistencia 24/7. Disponible directamente en WhatsApp.
+                </p>
+                <a href="https://wa.me/573143224157" class="whatsapp-cta" target="_blank">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                    </svg>
+                    Chatear en WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="caracteristicas" class="features-section">
+            <div class="section-content">
+                <h2 class="section-title">¿Qué puede hacer Darnex AI?</h2>
+                <p class="section-subtitle">
+                    Una inteligencia artificial completa diseñada para ayudarte en múltiples tareas
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="feature-title">Conversaciones Inteligentes</h3>
+                        <p class="feature-description">
+                            Mantén conversaciones naturales y fluidas. Darnex AI comprende el contexto y responde de manera coherente y útil.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">Asistente de Conocimiento</h3>
+                        <p class="feature-description">
+                            Obtén respuestas precisas sobre una amplia gama de temas: ciencia, tecnología, historia, cultura y mucho más.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3 class="feature-title">Ayuda Creativa</h3>
+                        <p class="feature-description">
+                            Asistencia con escritura, ideas creativas, resolución de problemas y análisis de información compleja.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Disponible 24/7</h3>
+                        <p class="feature-description">
+                            Acceso inmediato desde WhatsApp. No necesitas descargar apps adicionales ni registrarte en plataformas complejas.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Privacidad Garantizada</h3>
+                        <p class="feature-description">
+                            Tus conversaciones son privadas y seguras. Cumplimos con los más altos estándares de protección de datos.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Respuestas Precisas</h3>
+                        <p class="feature-description">
+                            Información actualizada y verificada. Darnex AI proporciona respuestas claras y relevantes para cada consulta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="acerca" class="about-section">
+            <div class="about-content">
+                <h2 class="section-title">Sobre Darnex AI</h2>
+                <p class="about-text">
+                    Darnex AI es una plataforma de inteligencia artificial de vanguardia que combina tecnología 
+                    avanzada con accesibilidad. Nuestro objetivo es democratizar el acceso a la IA, ofreciendo 
+                    una experiencia conversacional excepcional directamente desde WhatsApp.
+                </p>
+                <p class="about-text">
+                    Utilizamos modelos de lenguaje de última generación para proporcionar respuestas precisas, 
+                    contextualmente relevantes y útiles. Ya sea que necesites ayuda con tareas académicas, 
+                    profesionales o personales, Darnex AI está aquí para asistirte.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Disponibilidad</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1seg</span>
+                        <span class="stat-label">Tiempo de Respuesta</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Privacidad</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="contact-section">
+            <div class="section-content">
+                <h2 class="contact-title">Comienza a Conversar</h2>
+                <p class="contact-subtitle">
+                    Conecta con Darnex AI de forma instantánea a través de WhatsApp. 
+                    Es fácil, rápido y completamente gratuito.
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-method-title">WhatsApp</h3>
+                        <p class="contact-method-info">
+                            <a href="https://wa.me/573143224157" class="contact-link" target="_blank">
+                                +57 314 322 4157
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <h3 class="contact-method-title">Email</h3>
+                        <p class="contact-method-info">
+                            <a href="mailto:contacto@darnex-ai.pages.dev" class="contact-link">
+                                contacto@darnex-ai.pages.dev
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/privacy/" class="footer-link">Política de Privacidad</a>
+                    <a href="/terms/" class="footer-link">Términos de Servicio</a>
+                    <a href="mailto:contacto@darnex-ai.pages.dev" class="footer-link">Contacto</a>
+                </div>
+                <p class="footer-text">
+                    © 2024 Darnex AI. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll suave para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de números en las estadísticas
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const finalText = element.textContent;
+                        
+                        // Efecto de aparición gradual
+                        element.style.opacity = '0';
+                        setTimeout(() => {
+                            element.style.transition = 'opacity 0.5s ease';
+                            element.style.opacity = '1';
+                        }, 200);
+                    }
+                });
+            });
+
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+        }
+
+        // Header transparente al scroll
+        function handleHeaderScroll() {
+            const header = document.querySelector('.header');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backdropFilter = 'blur(20px)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backdropFilter = 'blur(10px)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+        }
+
+        // Inicializar funciones
+        document.addEventListener('DOMContentLoaded', function() {
+            animateNumbers();
+            handleHeaderScroll();
+            
+            // Efecto de parallax sutil en hero
+            const heroSection = document.querySelector('.hero-section');
+            const heroBgElement = document.querySelector('.hero-bg-element');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                
+                if (heroBgElement) {
+                    heroBgElement.style.transform = `translateY(${rate}px)`;
+                }
+            });
+
+            // Animación de entrada para las cards de características
+            const featureCards = document.querySelectorAll('.feature-card');
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                cardObserver.observe(card);
+            });
+
+            // Click tracking para WhatsApp (opcional para analytics)
+            document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Aquí puedes agregar código de tracking si es necesario
+                    console.log('WhatsApp CTA clicked');
+                });
+            });
+        });
+
+        // Prevenir zoom en iOS en inputs (si agregas formularios)
+        document.addEventListener('touchstart', function() {
+            const viewport = document.querySelector('meta[name=viewport]');
+            if (viewport) {
+                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0';
+            }
+        });
+    </script>
+</body>
+</html>
