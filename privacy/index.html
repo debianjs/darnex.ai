@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Darnex AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 24px 40px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .company-type {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 48px 40px 64px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 24px 0 12px 0;
+        }
+
+        .section p {
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.65;
+        }
+
+        .section ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .section li::marker {
+            color: #999;
+        }
+
+        .notice-box {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 32px;
+            margin: 48px 0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        .legal-info {
+            background: #f8f8f8;
+            padding: 24px;
+            margin: 32px 0;
+            font-size: 14px;
+            color: #555;
+            border-left: 3px solid #ddd;
+        }
+
+        .legal-info p {
+            margin-bottom: 8px;
+        }
+
+        .legal-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            padding: 24px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .toc {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            padding: 24px;
+            margin-bottom: 48px;
+        }
+
+        .toc-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .toc a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .header {
+                padding: 20px 24px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .content {
+                padding: 32px 24px 48px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .contact-section {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .toc {
+                padding: 20px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: none;
+            }
+            
+            .contact-link {
+                color: #1a1a1a;
+                border-bottom: 1px solid #1a1a1a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="company-name">Darnex AI</div>
+                <div class="company-type">Artificial Intelligence</div>
+            </div>
+        </header>
+
+        <main class="content">
+            <h1 class="title">Política de Privacidad</h1>
+            <p class="subtitle">Esta política describe cómo Darnex AI recopila, utiliza y protege tu información personal cuando utilizas nuestros servicios de inteligencia artificial.</p>
+
+            <nav class="toc">
+                <div class="toc-title">Índice</div>
+                <ol>
+                    <li><a href="#informacion-recopilada">Información que recopilamos</a></li>
+                    <li><a href="#uso-informacion">Uso de la información</a></li>
+                    <li><a href="#proteccion-datos">Protección de datos</a></li>
+                    <li><a href="#compartir-datos">Compartir información</a></li>
+                    <li><a href="#derechos">Tus derechos</a></li>
+                    <li><a href="#cookies">Cookies y tecnologías de seguimiento</a></li>
+                    <li><a href="#menores">Menores de edad</a></li>
+                    <li><a href="#transferencias">Transferencias internacionales</a></li>
+                    <li><a href="#actualizaciones">Actualizaciones de la política</a></li>
+                    <li><a href="#contacto">Información de contacto</a></li>
+                </ol>
+            </nav>
+
+            <section class="section" id="informacion-recopilada">
+                <h2 class="section-title">1. Información que recopilamos</h2>
+                
+                <h3 class="section-subtitle">Información que proporcionas directamente</h3>
+                <ul>
+                    <li>Información de cuenta (nombre, dirección de correo electrónico)</li>
+                    <li>Contenido de las conversaciones con nuestros servicios de IA</li>
+                    <li>Comentarios, consultas y comunicaciones que nos envías</li>
+                    <li>Información de facturación y pago (cuando corresponda)</li>
+                </ul>
+
+                <h3 class="section-subtitle">Información recopilada automáticamente</h3>
+                <ul>
+                    <li>Información del dispositivo (tipo, sistema operativo, navegador)</li>
+                    <li>Datos de uso (páginas visitadas, tiempo de sesión, interacciones)</li>
+                    <li>Información de red (dirección IP, proveedor de servicios)</li>
+                    <li>Cookies e identificadores únicos</li>
+                </ul>
+
+                <div class="notice-box">
+                    <strong>Importante:</strong> No recopilamos información sensible como datos de salud, información financiera detallada, o contenido privado no relacionado con el uso de nuestros servicios de IA.
+                </div>
+            </section>
+
+            <section class="section" id="uso-informacion">
+                <h2 class="section-title">2. Uso de la información</h2>
+                
+                <p>Utilizamos tu información para los siguientes propósitos:</p>
+
+                <h3 class="section-subtitle">Prestación del servicio</h3>
+                <ul>
+                    <li>Proporcionar respuestas personalizadas y contextualmente relevantes</li>
+                    <li>Mantener y mejorar el rendimiento de nuestros modelos de IA</li>
+                    <li>Autenticar tu identidad y gestionar tu cuenta</li>
+                    <li>Procesar pagos y gestionar suscripciones</li>
+                </ul>
+
+                <h3 class="section-subtitle">Mejora y desarrollo</h3>
+                <ul>
+                    <li>Analizar patrones de uso para mejorar nuestros servicios</li>
+                    <li>Entrenar y refinar nuestros algoritmos de inteligencia artificial</li>
+                    <li>Desarrollar nuevas funcionalidades y servicios</li>
+                    <li>Realizar investigación y análisis agregados</li>
+                </ul>
+
+                <h3 class="section-subtitle">Comunicación y soporte</h3>
+                <ul>
+                    <li>Responder a tus consultas y brindar soporte técnico</li>
+                    <li>Enviarte actualizaciones sobre el servicio y cambios importantes</li>
+                    <li>Notificarte sobre nuevas funcionalidades o servicios</li>
+                </ul>
+            </section>
+
+            <section class="section" id="proteccion-datos">
+                <h2 class="section-title">3. Protección de datos</h2>
+                
+                <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal:</p>
+
+                <h3 class="section-subtitle">Medidas técnicas</h3>
+                <ul>
+                    <li>Cifrado de datos en tránsito y en reposo utilizando estándares industriales</li>
+                    <li>Controles de acceso estrictos y autenticación multifactor</li>
+                    <li>Monitoreo continuo de seguridad y detección de amenazas</li>
+                    <li>Respaldos seguros y planes de recuperación ante desastres</li>
+                </ul>
+
+                <h3 class="section-subtitle">Medidas organizativas</h3>
+                <ul>
+                    <li>Políticas internas de manejo de datos y capacitación del personal</li>
+                    <li>Principio de mínimo privilegio para el acceso a información personal</li>
+                    <li>Auditorías regulares de seguridad y cumplimiento</li>
+                    <li>Procedimientos de respuesta a incidentes de seguridad</li>
+                </ul>
+            </section>
+
+            <section class="section" id="compartir-datos">
+                <h2 class="section-title">4. Compartir información</h2>
+                
+                <p>No vendemos tu información personal. Podemos compartir información en las siguientes circunstancias limitadas:</p>
+
+                <h3 class="section-subtitle">Proveedores de servicios</h3>
+                <p>Compartimos información con terceros que nos ayudan a operar nuestros servicios, como proveedores de hosting, procesamiento de pagos y análisis, bajo estrictos acuerdos de confidencialidad.</p>
+
+                <h3 class="section-subtitle">Requerimientos legales</h3>
+                <p>Podemos divulgar información cuando sea requerido por ley, orden judicial, o para proteger nuestros derechos legales o la seguridad de nuestros usuarios.</p>
+
+                <h3 class="section-subtitle">Transacciones comerciales</h3>
+                <p>En caso de fusión, adquisición o venta de activos, tu información puede ser transferida como parte de la transacción, siempre bajo las mismas protecciones de privacidad.</p>
+            </section>
+
+            <section class="section" id="derechos">
+                <h2 class="section-title">5. Tus derechos</h2>
+                
+                <p>Dependiendo de tu ubicación, puedes tener los siguientes derechos respecto a tu información personal:</p>
+
+                <ul>
+                    <li><strong>Acceso:</strong> Solicitar una copia de la información personal que tenemos sobre ti</li>
+                    <li><strong>Rectificación:</strong> Solicitar la corrección de información inexacta o incompleta</li>
+                    <li><strong>Eliminación:</strong> Solicitar la eliminación de tu información personal</li>
+                    <li><strong>Restricción:</strong> Solicitar la limitación del procesamiento de tu información</li>
+                    <li><strong>Portabilidad:</strong> Recibir tu información en un formato portátil</li>
+                    <li><strong>Oposición:</strong> Oponerte al procesamiento de tu información para ciertos propósitos</li>
+                </ul>
+
+                <p>Para ejercer estos derechos, puedes contactarnos utilizando la información proporcionada al final de esta política.</p>
+            </section>
+
+            <section class="section" id="cookies">
+                <h2 class="section-title">6. Cookies y tecnologías de seguimiento</h2>
+                
+                <p>Utilizamos cookies y tecnologías similares para mejorar tu experiencia y analizar el uso de nuestros servicios:</p>
+
+                <h3 class="section-subtitle">Tipos de cookies</h3>
+                <ul>
+                    <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento del sitio web</li>
+                    <li><strong>Cookies de rendimiento:</strong> Nos ayudan a analizar cómo se utiliza nuestro sitio</li>
+                    <li><strong>Cookies funcionales:</strong> Recuerdan tus preferencias y configuraciones</li>
+                </ul>
+
+                <p>Puedes controlar el uso de cookies a través de la configuración de tu navegador. Ten en cuenta que deshabilitar ciertas cookies puede afectar la funcionalidad del servicio.</p>
+            </section>
+
+            <section class="section" id="menores">
+                <h2 class="section-title">7. Menores de edad</h2>
+                
+                <p>Nuestros servicios no están dirigidos a menores de 13 años. No recopilamos intencionalmente información personal de menores de 13 años. Si nos enteramos de que hemos recopilado información de un menor de 13 años, tomaremos medidas para eliminar esa información.</p>
+                
+                <p>Los usuarios entre 13 y 18 años deben tener el consentimiento de un padre o tutor antes de usar nuestros servicios.</p>
+            </section>
+
+            <section class="section" id="transferencias">
+                <h2 class="section-title">8. Transferencias internacionales</h2>
+                
+                <p>Tu información puede ser procesada en países distintos al tuyo. Cuando transferimos información personal a otros países, implementamos salvaguardias apropiadas para proteger tu información, incluyendo:</p>
+                
+                <ul>
+                    <li>Cláusulas contractuales estándar aprobadas por las autoridades competentes</li>
+                    <li>Certificaciones de adecuación para transferencias a países con niveles adecuados de protección</li>
+                    <li>Medidas técnicas y organizativas adicionales cuando sea necesario</li>
+                </ul>
+            </section>
+
+            <section class="section" id="actualizaciones">
+                <h2 class="section-title">9. Actualizaciones de la política</h2>
+                
+                <p>Podemos actualizar esta política de privacidad ocasionalmente. Te notificaremos sobre cambios significativos por correo electrónico o mediante un aviso prominente en nuestros servicios. Te recomendamos revisar esta política periódicamente.</p>
+                
+                <p>Los cambios entran en vigor inmediatamente después de su publicación, a menos que se especifique lo contrario.</p>
+            </section>
+
+            <div class="contact-section" id="contacto">
+                <h3>¿Preguntas sobre privacidad?</h3>
+                <p>Si tienes preguntas sobre esta política de privacidad o sobre cómo manejamos tu información personal, contáctanos.</p>
+                <a href="mailto:privacy@darnex-ai.pages.dev" class="contact-link">privacy@darnex-ai.pages.dev</a>
+            </div>
+
+            <div class="legal-info">
+                <p><strong>Controlador de datos:</strong> Darnex AI, Inc.</p>
+                <p><strong>Dirección:</strong> [Dirección de la empresa]</p>
+                <p><strong>Correo electrónico:</strong> legal@darnex-ai.pages.dev</p>
+                <p><strong>Oficial de Protección de Datos:</strong> dpo@darnex-ai.pages.dev</p>
+            </div>
+        </main>
+
+        <footer class="last-updated">
+            Última actualización: 19 de septiembre de 2025
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
