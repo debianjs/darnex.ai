@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 24px 40px;
+            text-align: center;
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .company-type {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .content {
+            padding: 64px 40px;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+        }
+
+        .error-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 48px;
+            line-height: 1.5;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .help-section {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            padding: 32px;
+            margin: 32px 0 0 0;
+            text-align: left;
+        }
+
+        .help-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .help-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-list li {
+            color: #444;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .help-list li:before {
+            content: "•";
+            color: #999;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .contact-section p {
+            color: #666;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+            font-size: 14px;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        .search-box {
+            margin: 32px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.2s ease;
+            font-family: inherit;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .error-code {
+            animation: bounce 2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                max-width: none;
+            }
+            
+            .header {
+                padding: 20px 24px;
+            }
+            
+            .content {
+                padding: 48px 24px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 24px;
+            }
+            
+            .help-section {
+                padding: 24px 20px;
+            }
+            
+            .contact-section {
+                padding: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                border-radius: 0;
+            }
+            
+            .error-code {
+                font-size: 60px;
+            }
+            
+            .error-title {
+                font-size: 20px;
+            }
+            
+            .error-description {
+                font-size: 14px;
+            }
+        }
+
+        /* Estados hover mejorados */
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .search-input:hover {
+            border-color: #ccc;
+        }
+
+        /* Efecto de glassmorphism sutil */
+        .container {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            
+            .container {
+                background: rgba(40, 40, 40, 0.95);
+                border: 1px solid #333;
+            }
+            
+            .header {
+                background: rgba(40, 40, 40, 0.95);
+                border-bottom-color: #333;
+            }
+            
+            .company-name,
+            .error-code,
+            .error-title,
+            .help-title {
+                color: #ffffff;
+            }
+            
+            .help-section {
+                background: #2a2a2a;
+                border-color: #333;
+            }
+            
+            .contact-section {
+                background: #2a2a2a;
+                border-color: #333;
+            }
+            
+            .search-input {
+                background: #333;
+                border-color: #555;
+                color: #ffffff;
+            }
+            
+            .search-input::placeholder {
+                color: #999;
+            }
+            
+            .btn-secondary {
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+            
+            .btn-secondary:hover {
+                background: #ffffff;
+                color: #1a1a1a;
+            }
+            
+            .contact-link {
+                color: #ffffff;
+                border-bottom-color: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-name">Darnex AI</div>
+            <div class="company-type">Inteligencia Artificial</div>
+        </div>
+
+        <div class="content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Página no encontrada</h1>
+            <p class="error-description">
+                Lo sentimos, la página que estás buscando no existe o ha sido movida. 
+                Te ayudamos a encontrar lo que necesitas.
+            </p>
+
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Buscar en el sitio..."
+                    onkeypress="handleSearch(event)"
+                >
+            </div>
+
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">Volver al inicio</a>
+                <button onclick="history.back()" class="btn btn-secondary">Página anterior</button>
+            </div>
+
+            <div class="help-section">
+                <h3 class="help-title">¿Qué puedes hacer?</h3>
+                <ul class="help-list">
+                    <li>Verificar la URL que has introducido</li>
+                    <li>Usar la barra de búsqueda para encontrar contenido</li>
+                    <li>Navegar desde nuestra página principal</li>
+                    <li>Revisar nuestro mapa del sitio</li>
+                </ul>
+
+                <div class="contact-section">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Si crees que esto es un error, contáctanos</p>
+                    <a href="mailto:contacto@darnex-ai.pages.dev" class="contact-link">contacto@darnex-ai.pages.dev</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = event.target.value.trim();
+                if (query) {
+                    // Aquí puedes implementar la lógica de búsqueda
+                    // Por ejemplo, redirigir a una página de resultados
+                    window.location.href = `/buscar?q=${encodeURIComponent(query)}`;
+                }
+            }
+        }
+
+        // Añadir un poco de interactividad
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efecto de partículas sutil en el fondo
+            createFloatingElements();
+        });
+
+        function createFloatingElements() {
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 5; i++) {
+                const element = document.createElement('div');
+                element.style.cssText = `
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background: rgba(26, 26, 26, 0.1);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: -1;
+                `;
+                
+                // Posición aleatoria
+                element.style.left = Math.random() * 100 + '%';
+                element.style.top = Math.random() * 100 + '%';
+                
+                // Animación flotante
+                element.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                
+                document.body.appendChild(element);
+            }
+        }
+
+        // Añadir keyframes para la animación float
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+                50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
