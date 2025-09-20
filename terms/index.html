@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Darnex AI</title>
+    <meta name="description" content="Términos y condiciones de uso del servicio Darnex AI. Conoce nuestros términos legales y condiciones de servicio.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 24px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .company-type {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .back-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            color: #1a1a1a;
+        }
+
+        .content {
+            padding: 48px 40px 64px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 24px 0 12px 0;
+        }
+
+        .section p {
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.65;
+        }
+
+        .section ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .section li::marker {
+            color: #999;
+        }
+
+        .notice-box {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            border-left: 4px solid #1a1a1a;
+            padding: 24px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .notice-box.warning {
+            border-left-color: #ff6b35;
+            background: #fff7f5;
+        }
+
+        .notice-box.info {
+            border-left-color: #2563eb;
+            background: #f5f7ff;
+        }
+
+        .contact-section {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 32px;
+            margin: 48px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .contact-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        .legal-info {
+            background: #f8f8f8;
+            padding: 24px;
+            margin: 32px 0;
+            font-size: 14px;
+            color: #555;
+            border-left: 3px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .legal-info p {
+            margin-bottom: 8px;
+        }
+
+        .legal-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            padding: 24px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .toc {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            padding: 24px;
+            margin-bottom: 48px;
+            border-radius: 8px;
+        }
+
+        .toc-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .toc a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .definition-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .definition-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .definition-text {
+            color: #075985;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .header {
+                padding: 20px 24px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            
+            .content {
+                padding: 32px 24px 48px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .contact-section {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .toc {
+                padding: 20px;
+            }
+            
+            .notice-box {
+                padding: 20px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: none;
+            }
+            
+            .header {
+                position: static;
+                background: white;
+            }
+            
+            .contact-link {
+                color: #1a1a1a;
+                border-bottom: 1px solid #1a1a1a;
+            }
+
+            .back-link {
+                display: none;
+            }
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            
+            .container {
+                background: #1a1a1a;
+            }
+            
+            .header {
+                background: rgba(26, 26, 26, 0.95);
+                border-bottom-color: #333;
+            }
+            
+            .company-name,
+            .title,
+            .section-title {
+                color: #ffffff;
+            }
+            
+            .back-link {
+                color: #ccc;
+            }
+            
+            .back-link:hover {
+                color: #ffffff;
+            }
+            
+            .toc,
+            .notice-box {
+                background: #222;
+                border-color: #333;
+            }
+            
+            .contact-section {
+                background: #222;
+                border-color: #333;
+            }
+            
+            .legal-info {
+                background: #222;
+                border-left-color: #555;
+            }
+            
+            .definition-box {
+                background: #1e293b;
+                border-color: #334155;
+            }
+            
+            .definition-title {
+                color: #38bdf8;
+            }
+            
+            .definition-text {
+                color: #cbd5e1;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">D</div>
+                    <div>
+                        <div class="company-name">Darnex AI</div>
+                        <div class="company-type">Inteligencia Artificial</div>
+                    </div>
+                </div>
+                <a href="/" class="back-link">
+                    ← Volver al inicio
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 class="title">Términos y Condiciones</h1>
+            <p class="subtitle">
+                Estos términos y condiciones regulan el uso del servicio Darnex AI. 
+                Al utilizar nuestro servicio, aceptas cumplir con estos términos.
+            </p>
+
+            <div class="toc">
+                <div class="toc-title">Contenido</div>
+                <ol>
+                    <li><a href="#definiciones">Definiciones</a></li>
+                    <li><a href="#aceptacion">Aceptación de los Términos</a></li>
+                    <li><a href="#servicio">Descripción del Servicio</a></li>
+                    <li><a href="#uso-permitido">Uso Permitido</a></li>
+                    <li><a href="#uso-prohibido">Uso Prohibido</a></li>
+                    <li><a href="#privacidad">Privacidad y Datos</a></li>
+                    <li><a href="#disponibilidad">Disponibilidad del Servicio</a></li>
+                    <li><a href="#propiedad">Propiedad Intelectual</a></li>
+                    <li><a href="#limitaciones">Limitaciones de Responsabilidad</a></li>
+                    <li><a href="#modificaciones">Modificaciones de los Términos</a></li>
+                    <li><a href="#terminacion">Terminación del Servicio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ol>
+            </div>
+
+            <section id="definiciones" class="section">
+                <h2 class="section-title">1. Definiciones</h2>
+                
+                <div class="definition-box">
+                    <div class="definition-title">Términos Importantes</div>
+                    <div class="definition-text">
+                        Para los efectos de estos términos y condiciones, se entiende por:
+                    </div>
+                </div>
+
+                <ul>
+                    <li><strong>"Darnex AI"</strong> o <strong>"el Servicio"</strong>: Se refiere a la plataforma de inteligencia artificial y todos sus servicios asociados.</li>
+                    <li><strong>"Usuario"</strong>: Cualquier persona que utilice el servicio de Darnex AI.</li>
+                    <li><strong>"Contenido"</strong>: Cualquier información, texto, mensaje o dato intercambiado a través del servicio.</li>
+                    <li><strong>"WhatsApp"</strong>: La plataforma de mensajería a través de la cual se accede principalmente al servicio.</li>
+                </ul>
+            </section>
+
+            <section id="aceptacion" class="section">
+                <h2 class="section-title">2. Aceptación de los Términos</h2>
+                <p>
+                    Al utilizar Darnex AI, confirmas que has leído, entendido y aceptas estar vinculado por estos términos y condiciones. Si no estás de acuerdo con estos términos, no debes utilizar el servicio.
+                </p>
+                <p>
+                    Estos términos constituyen un acuerdo legal entre tú y Darnex AI. El uso continuado del servicio implica la aceptación de cualquier modificación a estos términos.
+                </p>
+
+                <div class="notice-box info">
+                    <strong>Importante:</strong> Debes ser mayor de 13 años para utilizar este servicio. Si eres menor de 18 años, necesitas el consentimiento de tus padres o tutores legales.
+                </div>
+            </section>
+
+            <section id="servicio" class="section">
+                <h2 class="section-title">3. Descripción del Servicio</h2>
+                <p>
+                    Darnex AI es un servicio de inteligencia artificial que proporciona:
+                </p>
+                <ul>
+                    <li>Respuestas a consultas generales</li>
+                    <li>Asistencia en tareas académicas y profesionales</li>
+                    <li>Conversaciones naturales y contextualmente relevantes</li>
+                    <li>Información y explicaciones sobre diversos temas</li>
+                    <li>Ayuda creativa y de escritura</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Acceso al Servicio</h3>
+                <p>
+                    El servicio está disponible principalmente a través de WhatsApp en el número +57 314 322 4157. No se requiere registro previo ni descarga de aplicaciones adicionales.
+                </p>
+            </section>
+
+            <section id="uso-permitido" class="section">
+                <h2 class="section-title">4. Uso Permitido</h2>
+                <p>
+                    Puedes utilizar Darnex AI para:
+                </p>
+                <ul>
+                    <li>Obtener información y respuestas a preguntas legítimas</li>
+                    <li>Asistencia educativa y académica</li>
+                    <li>Apoyo en tareas profesionales y creativas</li>
+                    <li>Conversaciones generales y consultas informativas</li>
+                    <li>Resolución de problemas dentro de nuestras capacidades</li>
+                </ul>
+
+                <div class="notice-box">
+                    <strong>Uso Responsable:</strong> Te comprometes a utilizar el servicio de manera ética, legal y responsable, respetando estos términos y las leyes aplicables.
+                </div>
+            </section>
+
+            <section id="uso-prohibido" class="section">
+                <h2 class="section-title">5. Uso Prohibido</h2>
+                <p>
+                    Está estrictamente prohibido utilizar Darnex AI para:
+                </p>
+                <ul>
+                    <li>Actividades ilegales o que promuevan la ilegalidad</li>
+                    <li>Contenido ofensivo, discriminatorio o de odio</li>
+                    <li>Acoso, intimidación o amenazas hacia personas</li>
+                    <li>Generación de contenido sexual explícito o inapropiado</li>
+                    <li>Difusión de información falsa o engañosa</li>
+                    <li>Violación de derechos de propiedad intelectual</li>
+                    <li>Intentos de manipular o comprometer el sistema</li>
+                    <li>Uso comercial no autorizado</li>
+                    <li>Spam o mensajes masivos no solicitados</li>
+                </ul>
+
+                <div class="notice-box warning">
+                    <strong>Advertencia:</strong> El incumplimiento de estas restricciones puede resultar en la suspensión inmediata del acceso al servicio y, en casos graves, acciones legales.
+                </div>
+            </section>
+
+            <section id="privacidad" class="section">
+                <h2 class="section-title">6. Privacidad y Datos</h2>
+                <p>
+                    Nos tomamos muy en serio la privacidad de nuestros usuarios:
+                </p>
+                <ul>
+                    <li>No almacenamos conversaciones de manera permanente</li>
+                    <li>No compartimos información personal con terceros</li>
+                    <li>Utilizamos los datos únicamente para mejorar el servicio</li>
+                    <li>Cumplimos con las regulaciones de protección de datos aplicables</li>
+                </ul>
+
+                <p>
+                    Para información detallada sobre cómo manejamos tus datos, consulta nuestra 
+                    <a href="/privacy/" style="color: #1a1a1a; text-decoration: underline;">Política de Privacidad</a>.
+                </p>
+            </section>
+
+            <section id="disponibilidad" class="section">
+                <h2 class="section-title">7. Disponibilidad del Servicio</h2>
+                <p>
+                    Nos esforzamos por mantener el servicio disponible 24/7, sin embargo:
+                </p>
+                <ul>
+                    <li>Pueden ocurrir interrupciones por mantenimiento programado</li>
+                    <li>Problemas técnicos pueden afectar temporalmente la disponibilidad</li>
+                    <li>No garantizamos un tiempo de respuesta específico</li>
+                    <li>El servicio puede ser modificado o actualizado sin previo aviso</li>
+                </ul>
+
+                <div class="notice-box">
+                    <strong>Nota:</strong> No somos responsables por interrupciones causadas por terceros, incluyendo pero no limitado a proveedores de internet o la plataforma WhatsApp.
+                </div>
+            </section>
+
+            <section id="propiedad" class="section">
+                <h2 class="section-title">8. Propiedad Intelectual</h2>
+                <p>
+                    Todos los derechos de propiedad intelectual relacionados con Darnex AI, incluyendo pero no limitado a:
+                </p>
+                <ul>
+                    <li>El software y algoritmos utilizados</li>
+                    <li>La marca "Darnex AI"</li>
+                    <li>El diseño y funcionalidad del servicio</li>
+                    <li>Cualquier contenido original generado por el sistema</li>
+                </ul>
+                <p>
+                    Son propiedad exclusiva de Darnex AI y están protegidos por las leyes de propiedad intelectual aplicables.
+                </p>
+
+                <h3 class="section-subtitle">Contenido del Usuario</h3>
+                <p>
+                    Mantienes la propiedad de cualquier contenido que compartas con el servicio. Sin embargo, nos otorgas una licencia limitada para procesar dicho contenido con el fin de proporcionar el servicio.
+                </p>
+            </section>
+
+            <section id="limitaciones" class="section">
+                <h2 class="section-title">9. Limitaciones de Responsabilidad</h2>
+                <p>
+                    Darnex AI se proporciona "tal como está" y "según disponibilidad". No garantizamos:
+                </p>
+                <ul>
+                    <li>La precisión absoluta de todas las respuestas</li>
+                    <li>La disponibilidad ininterrumpida del servicio</li>
+                    <li>Que el servicio cumplirá con todas tus expectativas</li>
+                    <li>La ausencia total de errores o fallos técnicos</li>
+                </ul>
+
+                <div class="notice-box warning">
+                    <strong>Importante:</strong> No somos responsables por decisiones tomadas basándose en información proporcionada por el servicio. Siempre verifica información crítica con fuentes adicionales.
+                </div>
+
+                <p>
+                    En ningún caso seremos responsables por daños indirectos, incidentales, especiales o consecuenciales que puedan surgir del uso del servicio.
+                </p>
+            </section>
+
+            <section id="modificaciones" class="section">
+                <h2 class="section-title">10. Modificaciones de los Términos</h2>
+                <p>
+                    Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación.
+                </p>
+                <p>
+                    Te notificaremos sobre cambios significativos a través de:
+                </p>
+                <ul>
+                    <li>Un mensaje en el servicio</li>
+                    <li>Actualización de la fecha de "última modificación"</li>
+                    <li>Comunicación directa cuando sea necesario</li>
+                </ul>
+                <p>
+                    El uso continuado del servicio después de las modificaciones constituye tu aceptación de los nuevos términos.
+                </p>
+            </section>
+
+            <section id="terminacion" class="section">
+                <h2 class="section-title">11. Terminación del Servicio</h2>
+                <p>
+                    Podemos suspender o terminar tu acceso al servicio en cualquier momento si:
+                </p>
+                <ul>
+                    <li>Violas estos términos y condiciones</li>
+                    <li>Utilizas el servicio de manera inapropiada o abusiva</li>
+                    <li>Consideramos que tu uso afecta negativamente a otros usuarios</li>
+                    <li>Por razones técnicas, legales o comerciales</li>
+                </ul>
+                
+                <p>
+                    También puedes dejar de utilizar el servicio en cualquier momento simplemente dejando de interactuar con él.
+                </p>
+            </section>
+
+            <div class="legal-info">
+                <p><strong>Ley Aplicable:</strong> Estos términos se rigen por las leyes de Colombia.</p>
+                <p><strong>Resolución de Disputas:</strong> Cualquier disputa será resuelta mediante negociación directa o mediación.</p>
+                <p><strong>Separabilidad:</strong> Si alguna disposición de estos términos es inválida, las demás disposiciones permanecen en vigor.</p>
+            </div>
+
+            <section id="contacto" class="contact-section">
+                <h3>¿Preguntas sobre estos términos?</h3>
+                <p>Si tienes preguntas sobre estos términos y condiciones, puedes contactarnos:</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:contacto@darnex-ai.pages.dev" class="contact-link">contacto@darnex-ai.pages.dev</a><br>
+                    <strong>WhatsApp:</strong> <a href="https://wa.me/573143224157" class="contact-link" target="_blank">+57 314 322 4157</a>
+                </p>
+            </section>
+        </div>
+
+        <div class="last-updated">
+            <strong>Última actualización:</strong> 19 de septiembre de 2024
+        </div>
+    </div>
+
+    <script>
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight de sección activa en el TOC
+        function highlightActiveSection() {
+            const sections = document.querySelectorAll('[id]');
+            const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.toc a[href="#${id}"]`);
+                        
+                        // Remover clase activa de todos los links
+                        tocLinks.forEach(link => {
+                            link.style.fontWeight = '400';
+                            link.style.color = '#1a1a1a';
+                        });
+                        
+                        // Agregar clase activa al link actual
+                        if (activeLink) {
+                            activeLink.style.fontWeight = '600';
+                            activeLink.style.color = '#0369a1';
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '-100px 0px -66%',
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Botón para volver arriba
+        function createBackToTopButton() {
+            const button = document.createElement('button');
+            button.innerHTML = '↑';
+            button.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                background: #1a1a1a;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+                display: none;
+                z-index: 1000;
+                transition: all 0.3s ease;
+            `;
+            
+            button.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            document.body.appendChild(button);
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        }
+
+        // Inicializar funcionalidades
+        document.addEventListener('DOMContentLoaded', function() {
+            highlightActiveSection();
+            createBackToTopButton();
+        });
+    </script>
+</body>
+</html>
